@@ -8,10 +8,10 @@ import Spinner from '../../Components/UI/Spinner/Spinner';
 import withErrorHandler from '../../hoc/withErrorHandler';
 
 const IngredientsPrice = {
-    salad: 0.5,
-    cheese: 0.4,
     bacon: 0.7,
+    cheese: 0.4,
     meat: 1.3,
+    salad: 0.5,
 }
 
 class BurgerBuilder extends Component {
@@ -105,12 +105,12 @@ class BurgerBuilder extends Component {
                 <React.Fragment>
                     <Burger ingredients = {this.state.ingredients} />
                     <BuildControls 
-                    ingredientAdded = {this.addIngredientHandler}
-                    ingredientRemoved = {this.removeIngredientHandler}                
-                    disabled = {disableInfo}
-                    purchasable = {this.state.purchasable}
-                    price = {this.state.totalPrice}
-                    order = {this.purchaseHandler} />
+                        ingredientAdded = {this.addIngredientHandler}
+                        ingredientRemoved = {this.removeIngredientHandler}                
+                        disabled = {disableInfo}
+                        purchasable = {this.state.purchasable}
+                        price = {this.state.totalPrice}
+                        order = {this.purchaseHandler} />
                 </React.Fragment>
             );    
             orderSummary = <OrderSummary
