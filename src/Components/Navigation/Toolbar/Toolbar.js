@@ -1,4 +1,5 @@
 import React from 'react';
+
 import ToolbarStyle from './Toolbar.module.css';
 import Logo from '../../Logo/Logo';
 import NavigationItems from '../NavigationItems/NavigationItems';

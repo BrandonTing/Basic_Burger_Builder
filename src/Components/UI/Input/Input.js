@@ -1,4 +1,5 @@
 import React from 'react';
+
 import InputStyle from './Input.module.css';
 
 const input = (props) => {

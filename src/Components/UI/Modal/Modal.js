@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+
 import ModalStyle from './Modal.module.css';
 import Backdrop from '../Backdrop/Backdrop'
 
