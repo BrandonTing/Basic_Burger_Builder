@@ -2,7 +2,7 @@ import * as actionTypes from '../actions/actionTypes';
 import { updateObject } from '../utility';
 
 const initialState = {
-    orders:null,
+    orders: null,
     loading: false,
     purchased: false,
 };
@@ -18,12 +18,8 @@ const reducer = (state = initialState, action) => {
                 loading: true,
             })
         case actionTypes.PURCHASE_BURGER_SUCCESS:
-            // const newOrder = updateObject (action.orderData, {
-            //     id: action.orderId, 
-            // })
             return updateObject(state, {
                 loading: false,
-                // orders: state.orders.concat(newOrder),
                 purchased: true,
             })
         case actionTypes.PURCHASE_BURGER_FAIL:

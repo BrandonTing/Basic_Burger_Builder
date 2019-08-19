@@ -9,21 +9,14 @@ import Spinner from '../../Components/UI/Spinner/Spinner';
 
 class Orders extends Component{
     componentDidMount(){
-        this.props.onFetchOrder();
+        this.props.onFetchOrder(this.props.token, this.props.userId);
     }
 
     render(){
         let orderList = null;
         if (this.props.loading) {
             orderList = <Spinner />
-        } else if ( !this.props.orders ) {
-            orderList = (
-                <div style = {{textAlign: 'center'}}>
-                    <p>No Existing Orders.</p>
-                    <p>Let's build own burger in Burger Builder Page!</p>
-                </div>
-            );    
-        } else {
+        } else if ( this.props.orders && this.props.token) {
             orderList = (
                 this.props.orders.map(order => (
                     <Order 
@@ -33,6 +26,12 @@ class Orders extends Component{
                         />   
                 ))
             )    
+        } else {
+            orderList = (
+                <div style = {{textAlign: 'center'}}>
+                    <p>No Existing Orders.</p>
+                </div>
+            );    
         }
         return(
             <div>
@@ -46,12 +45,14 @@ const mapStateToProps = state => {
     return {
         orders: state.order.orders,
         loading: state.order.loading,
+        token: state.auth.token,
+        userId: state.auth.userId,
     }
 }
 
 const mapDispatchToProps = dispatch => {
     return {
-        onFetchOrder : () => dispatch(actions.fetchOrders())
+        onFetchOrder : (token, userId) => dispatch(actions.fetchOrders(token, userId))
     }
 }
 

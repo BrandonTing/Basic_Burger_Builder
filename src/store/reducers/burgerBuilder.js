@@ -12,6 +12,7 @@ const initialState = {
     ingredients: null,
     totalPrice: 4,
     error: false,
+    building: false,
 };
 
 const addIngredient = (state, action) => {
@@ -20,6 +21,7 @@ const addIngredient = (state, action) => {
     const addedState =  {
         ingredients: addededIngredients, 
         totalPrice: state.totalPrice + IngredientsPrice[action.ingredientName],
+        building: true,
     }
     return updateObject(state, addedState)
 }
@@ -30,6 +32,7 @@ const removeIngredient = (state, action) => {
     const removedState =  {
         ingredients: removedIngredients, 
         totalPrice: state.totalPrice + IngredientsPrice[action.ingredientName],
+        building: true,
     }
     return updateObject(state, removedState)
 }
@@ -50,6 +53,7 @@ const reducer = (state = initialState, action) => {
                 },
                 totalPrice: 4.0,
                 error: false,
+                building: false,
             }) 
         case actionTypes.FETCH_ING_FAILED:
             return updateObject(state, {
