@@ -1,5 +1,9 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Project site
+This project is deployed at firebase server.
+https://react-burger-builder-2cb81.firebaseapp.com/
+
 ## Available Scripts
 
 In the project directory, you can run:
